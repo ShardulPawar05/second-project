@@ -2,26 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  let arr=[12,25,12,8,51,4,531,]
-  let ans;
+ let num=[1,2,3,4,5,6,7,8,9,10];
 
-   arr.map((singleElemet)=>{
-     ans=2*singleElemet
-   })
-  
 
   
 
  
   return (
     <div>
-      <div> Your arry is<br/> {arr.map((singleelemet)=>{
-      return singleelemet+","
-    })}</div>
+      {num.map((singleElemnt)=>{
+        if (singleElemnt%2===0){
+          return <div><i>{singleElemnt}</i></div>
+        }
+        else{
+          return<div><strong>{singleElemnt}</strong></div>
+        }
+      })}
      
-      <div> multiply arry by 2{arr.map((singleElemet)=>{
-      return 2*singleElemet+","
-   })}</div>
     </div>
   );
 }
