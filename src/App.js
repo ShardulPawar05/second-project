@@ -1,42 +1,26 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
- let num=[1,2,3,4,5,6,7,8,9,10];
-let table=[10,20,30,40,50,60,70,80];
 
+const [age,setage]=useState();
+function handleAgeChange(event){
+setage(event.target.value)
 
-  
+}
 
  
   return (
     <div>
-      
-      { table.map((singleElement)=>{
-        
-        
-       return<div> <br/>{num.map((seingleNumber)=>{
-          
-          return singleElement*seingleNumber+(",")
-
-        
-        
-          
-
-          
-          
-
-        })
-      }</div>
-      
-        
-        
-        
-        
-      })}
-      
-
+     
+     <p>enter the number</p>
+     <input name='number' value={age} onChange={handleAgeChange} />
+     <div>{age}</div>
     
+
+    ?(condition):(condition)
+  
 
     </div>
   );
