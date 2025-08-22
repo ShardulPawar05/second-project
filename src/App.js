@@ -3,17 +3,37 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-const [name,setname]=useState();
-const[showBlock,setshowblock]=useState(false);
+const [num1,setnum1]=useState();
+const [num2,setnum2]=useState();
+parseInt(num1)
+// these variable use to store value of calculation
+const[totaladd,settotaladd]=useState();
+const[totalsub,settotalsub]=useState();
+const[totalmul,settotalmul]=useState();
+const[totaldiv,settotaldiv]=useState();
+
+
+// const[showcalculation,setcalculation]=useState();
 // const[Show, show]=useState();
 
 
-function handleNAmeChange(event){
-  setname(event.target.value)
+function handlenum1(event){
+  setnum1(parseInt(event.target.value))
 }
-function onSubmitClick(){
+function handlenum2(event){
+  setnum2(parseInt(event.target.value))
+}
+function onSubmit(){
 
-  setshowblock(true)
+  settotaladd((num1)+(num2));
+  settotalsub((num1)-(num2));
+  settotalmul((num1)*(num2));
+  settotaldiv((num1)/(num2));
+
+  
+
+  // setshowblock(true)
+
 
 }
 
@@ -21,62 +41,48 @@ function onSubmitClick(){
  
   return (
     <div>
-      {/* <p>Enter the  number</p> */}
-      <input type='text' name='number'value={name} onChange={handleNAmeChange} placeholder='Enter your name'/>
-      {/* <div>{age}</div> */}
-      <button  onClick={onSubmitClick}>Show output</button>
-          {showBlock ? <div><p>{name}</p>
-          <p>
-          <img src="https://hips.hearstapps.com/hmg-prod/images/2025-bmw-m5-118-67b6198412889.jpg?crop=0.524xw:0.441xh;0.359xw,0.380xh&resize=1200:*"/>
-          </p>
-          </div> :(" click on button")}
-        
+      <input type='number' name='num1' value={num1} onChange={handlenum1} placeholder='Enter the first number'></input> 
+      <input type='number' name='num2' value={num2} onChange={handlenum2}    placeholder='Enter the second number'></input> 
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      {/* <p>Enter your name</p>
-      <input type="text"name='name'value={name} onChange={handleNAmeChange}placeholder='Enter your name'/>
-      <div>{name}</div>
-      <button onClick={()=>setname("")}>clear name</button>
-      <p>ENter your address</p>
-      <input type='text' name='add' value={add} onChange={handleAddress}placeholder='Enter your address'/>
-      <h1>{add}</h1>
-      <button onClick={()=>setadd("")}>clear</button><br/>
-      <input type='email' name='email'value={email}onChange={handleEmail}placeholder='Enter your Email address'/>
-      <div>{email}</div>
-      <button >clear eamil</button>
-      <input type='passsword' name='passsword' value={userpass} onChange={handleUserPass}placeholder='PAssword'/>
-      <div>{userpass}</div>
-      <button onClick={()=>setuserpass("")}>clear</button> */}
+      <button onClick={onSubmit}>calulation</button>
+      {totaladd && <h1>addition of {num1} and {num2} is  { totaladd}</h1>}
+      {totalsub && <h1> substraction of {num1} and {num2} is {totalsub}</h1>}
+      {totalmul && <h1> multiplication of {num1} and {num2} is {totalmul}</h1>}
+      {totaldiv && <h1> divdation of {num1} and {num2} is {totaldiv}</h1>}
+    
 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     </div>
   );
 }
